@@ -37,20 +37,12 @@ object MainDemo {
       val spark = SparkSession.builder.config(rdd.sparkContext.getConf).getOrCreate()
       import spark.implicits._
 
-      println("key===================")
-      rdd.map(_.key()).toDF().show()
-      println("key===================")
       println("value===================")
       rdd.map(_.value()).toDF().show()
       println("value===================")
 
       rdd.foreach { rd =>
-        println(rd.value())
-        val a: Map[String, String] = Map(
-          "a" -> "b",
-          "3" -> "d"
-        )
-        a.toSeq.toDF().show()
+        println("abc".concat(rd.value()))
       }
     }
 

@@ -43,6 +43,15 @@ object MainDemo {
       println("value===================")
       rdd.map(_.value()).toDF().show()
       println("value===================")
+
+      rdd.foreach { rd =>
+        println(rd.value())
+        val a: Map[String, String] = Map(
+          "a" -> "b",
+          "3" -> "d"
+        )
+        a.toSeq.toDF().show()
+      }
     }
 
     ssc.start()

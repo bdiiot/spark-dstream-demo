@@ -10,5 +10,5 @@ spark-submit \
 --deploy-mode client \
 --jars "spark-dstream-demo-1.0-SNAPSHOT-jar-with-dependencies.jar" \
 --conf "spark.executor.extraJavaOptions=-Djava.security.auth.login.config=/tmp/kafka_bigdata_jaas.conf" \
---class com.bdiiot.spark.serializable.main.SparkMain \
+--class com.bdiiot.spark.dstream.main.MainDemo \
 spark-dstream-demo-1.0-SNAPSHOT.jar
